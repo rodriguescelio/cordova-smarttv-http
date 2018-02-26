@@ -2,13 +2,23 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-smarttv-http" version="0.0.1">
     <name>SmartTvHttp</name>
     <description></description>
-    <license>Apache 2.0</license>
-    <keywords></keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    
     <js-module src="www/SmartTvHttp.js" name="SmartTvHttp">
         <clobbers target="SmartTvHttp" />
     </js-module>
 
     <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SmartTvHttp" >
+                <param name="android-package" value="com.celiorodrigues.SmartTvHttp"/>
+            </feature>
+        </config-file>
+
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
@@ -18,5 +28,6 @@
         <source-file src="src/android/com/celiorodrigues/SmartTvHttp/SmartTvHttp.java" target-dir="src/com/celiorodrigues" />
         <source-file src="src/android/com/celiorodrigues/SmartTvHttp/SmartTvHttpGet.java" target-dir="src/com/celiorodrigues" />
         <source-file src="src/android/com/celiorodrigues/SmartTvHttp/SmartTvHttpPost.java" target-dir="src/com/celiorodrigues" />
+
     </platform>
 </plugin>
