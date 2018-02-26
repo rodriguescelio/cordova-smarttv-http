@@ -13,21 +13,21 @@
 
     <platform name="android">
 
-        <config-file target="res/xml/config.xml" parent="/*">
+        <config-file target="config.xml" parent="/*">
             <feature name="SmartTvHttp" >
                 <param name="android-package" value="com.celiorodrigues.SmartTvHttp"/>
             </feature>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest">
+        <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-        <source-file src="okhttp-3.10.0.jar" target-dir="libs" />
+        <framework src="com.squareup.okhttp3:okhttp:3.10.0" />
         
-        <source-file src="src/android/com/celiorodrigues/SmartTvHttp/SmartTvHttp.java" target-dir="src/com/celiorodrigues" />
-        <source-file src="src/android/com/celiorodrigues/SmartTvHttp/SmartTvHttpGet.java" target-dir="src/com/celiorodrigues" />
-        <source-file src="src/android/com/celiorodrigues/SmartTvHttp/SmartTvHttpPost.java" target-dir="src/com/celiorodrigues" />
+        <source-file src="src/android/com/celiorodrigues/SmartTvHttp.java" target-dir="src/com/celiorodrigues" />
+        <source-file src="src/android/com/celiorodrigues/SmartTvHttpGet.java" target-dir="src/com/celiorodrigues" />
+        <source-file src="src/android/com/celiorodrigues/SmartTvHttpPost.java" target-dir="src/com/celiorodrigues" />
 
     </platform>
 </plugin>

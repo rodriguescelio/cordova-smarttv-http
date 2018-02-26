@@ -1,4 +1,4 @@
-package com.celiorodrigues.SmartTvHttp;
+package com.celiorodrigues;
 
 import java.util.HashMap;
 import java.util.Iterator;
